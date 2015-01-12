@@ -3,9 +3,9 @@
       <hr>
       <div class="row">
          {% if articles %}
-            {% set copy_date = articles[0].date.strftime('%Y') %}
+            {% set copy_date = '2009-2015' %}
          {% else %}
-            {% set copy_date = '' %}
+            {% set copy_date = '2009-2015' %}
          {% endif %}
          <div class="col-xs-10">&copy; {{ copy_date }} {{ AUTHOR }}
             &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,

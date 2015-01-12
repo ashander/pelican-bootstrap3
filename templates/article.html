@@ -1,4 +1,7 @@
 {% extends "base.html" %}
+{% if category == 'notes' %}
+  {% set blogpage = True %}
+{% endif %}
 {% block title %}{{ article.title|striptags }} - {{ SITENAME }}{% endblock %}
 {% block html_lang %}{{ article.lang }}{% endblock %}
 {% block meta %}
@@ -82,12 +85,14 @@
             <div class="entry-content">
                 <div class="panel">
                     <div class="panel-body">
-                        {% include "includes/article_info.html" %}
+                      {% include 'includes/note_info.html' %}
                     </div>
                 </div>
                 {{ article.content }}
             </div>
             <!-- /.entry-content -->
+            {% include 'includes/nocomments.html' %}
+            {% include 'includes/neighbors.html' %}
             {% include 'includes/related-posts.html' %}
             {% include 'includes/addthis.html' %}
             {% include 'includes/comments.html' %}

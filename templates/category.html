@@ -1,4 +1,7 @@
-{% extends "article_list.html" %}
+{% extends "feed_list.html" %}
+{% if category == 'notes' %}
+  {% set blogpage = True %}
+{% endif %}
 {% block title %}{{ category }} - {{ SITENAME }}{% endblock %}
 {% block meta %}
     <meta name="author" content="{{ AUTHOR }}" />
